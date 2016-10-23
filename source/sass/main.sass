@@ -1,0 +1,452 @@
+@font-face 
+    font-family: Biko
+    src: url("../fonts/biko/Biko_Regular.otf") format("opentype")
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+=adaptive-padding($w)
+    padding: $w 160px
+    @media screen and (max-width: 1060px)
+        padding: $w 100px
+    @media screen and (max-width: 768px)
+        padding: $w 50px
+    @media screen and (max-width: 480px)
+        padding: $w 25px
+    @media screen and (max-width: 320px)
+        padding: $w 10px
+html
+    
+    max-width: 100vw
+    width: 100vw
+    height: 100%
+    overflow-x: hidden
+
+body
+    
+    max-width: 100vw
+    width: 100vw
+    min-height: 100vh
+    overflow-x: hidden
+    position: relative
+    display: block
+
+
+
+    // -------------------------------------------------FIRST
+    .first
+        padding-bottom: 60px
+        background: #4c774a
+        background: -moz-linear-gradient(left,  #4c774a 0%, #99b969 40%, #164834 100%)
+        background: -webkit-linear-gradient(left,  #4c774a 0%,#99b969 40%,#164834 100%)
+        background: linear-gradient(to right,  #4c774a 0%,#99b969 40%,#164834 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c774a', endColorstr='#164834',GradientType=1 )
+        width: 100%
+        overflow-x: hidden
+        header
+            +adaptive-padding(30px)
+            display: flex
+            justify-content: space-between
+            align-items: center
+            position: relative
+            z-index: 5
+            .leftCol
+                width: 50%
+                @media screen and (max-width: 1100px)
+                    width: 40%
+                @media screen and (max-width: 890px)
+                    width: 30%
+                display: flex
+                align-items: center
+                font-size: 27.58px
+                img
+                    margin-left: 20px
+                    margin-right: 13px
+                    min-width: 38px
+                span
+                    font-family: Biko
+                    font-size: 27.58px
+            .rightCol
+                width: 30%
+                @media screen and (max-width: 1660px)
+                    width: 50%
+                @media screen and (max-width: 1100px)
+                    width: 60%
+                @media screen and (max-width: 890px)
+                    width: 70%
+                @media screen and (max-width: 768px)
+                    width: 40%
+                    min-width: 250px
+                @media screen and (max-width: 570px)
+                    display:  flex
+                    justify-content: flex-end
+                    min-width: 0
+                font-size: 18px
+                position: relative
+                z-index: 1
+                ul
+                    list-style: none
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    margin: 0
+                    margin-right: 20px
+                    @media screen and (max-width: 570px)
+                        flex-direction: column
+                        position: absolute
+                        width: 210px
+                        top: 70px
+                        right: -300px
+                        transition: all 0.3s ease-out
+                        z-index: 3333
+                    li
+                        font-family: 'Open Sans', sans-serif
+                        font-size: 18px
+                        transition: transform 0.3s ease-out
+                        @media screen and (max-width: 570px)
+                            margin-bottom: 15px
+                            background-color: white
+                            padding: 10px
+                            width: 100%
+                            cursor: pointer
+                            font-size: 20px
+                        &:hover
+                            transform: scale(1.1)
+                        a
+                            text-decoration: none
+                            color: black
+                        &:last-child
+                            border-left: 3px solid black
+                            border-right: 3px solid black
+                            border-top: 2px solid black
+                            border-bottom: 2px solid black
+                            padding: 9px 32px
+                            transition: background 0.3s ease-out
+                            @media screen and (max-width: 768px)
+                                display: none
+                            &:hover
+                                background-color: #86a961
+                                cursor: pointer
+                                transform: scale(1)
+                #burger_menu
+                    display: none
+                .burger
+                    display: none
+                    @media screen and (max-width: 570px)
+                        display: flex
+                    flex-direction: column
+                    cursor: pointer
+                    width: 60px
+                    height: 60px
+                    align-items center
+                    justify-content: center
+                    padding-top: 15px                    
+                    span
+                        display: block
+                        width: 40px
+                        height: 3px
+                        background-color: black
+                        margin-bottom: 10px
+                        border-radius: 2px
+                        position: relative
+                        top: 0px
+                        transition: all 0.3s ease-out
+                input:checked
+                    & ~ .burger
+                        span:nth-child(1)
+                            transform: rotate(45deg)
+                            top: 12.5px
+                        span:nth-child(2)
+                            opacity: 0
+                            transform: rotate(90deg)
+                        span:nth-child(3)
+                            transform: rotate(-45deg)
+                            top: -12.5px
+                    & ~ ul
+                        right: -30px
+        .lableLogo
+            +adaptive-padding(18px)
+            position: relative
+            z-index: 1
+            img
+                margin-left: 65px
+                position: relative
+                @media screen and (max-width: 1224px)
+                    width: 80%
+            .img_wrapper
+                display: inline-block
+                position: relative
+                @media screen and (max-width: 1224px)
+                    width: 60%
+                @media screen and (max-width: 770px)
+                    display: none
+                &:after
+                    content: "For Mac"
+                    position: absolute
+                    display: inline-block
+                    font-family: 'Open Sans', sans-serif
+                    font-size: 18.68px
+                    left: 90%
+                    @media screen and (max-width: 1224px)
+                        left: 80%
+                    bottom: -13px
+                    width: 70px
+        .descHeader
+            +adaptive-padding(27px)
+            text-align: center
+            position: relative
+            z-index: 1
+            h1
+                margin: 0
+                margin-right: 15%
+                @media screen and (max-width: 770px)
+                    margin-right: 0
+                    font-weight: 800
+                font-size: 36px
+                position: relative
+                font-family: 'Open Sans', sans-serif
+                font-weight: 400
+        main
+            +adaptive-padding(33px)
+            
+            .desc
+                text-align: center
+                display: block
+                width: 84%
+                @media screen and (max-width: 770px)
+                    width: 100%
+                font-size: 22px
+                font-family: 'Open Sans', sans-serif
+                margin: 0 auto
+        .footprint
+            width: 50px
+            height: 50px
+            background: url("../images/foot_print.png") no-repeat
+            position: absolute
+            display: none
+            &.fp1
+                transform: rotate(105deg)
+                right: -20%
+                top: 50%
+            &.fp2
+                transform: rotate(80deg)
+                top: 40%
+                right: -40%
+            &.fp3
+                top: 70%
+                right: -60%
+                transform: rotate(120deg)
+                @media screen and (max-width: 1400px)
+                    top: 100%
+                @media screen and (max-width: 1280px)
+                    right: -50%
+            &.fp4
+                top: 60%
+                right: -83%
+                transform: rotate(120deg)
+                @media screen and (max-width: 1400px)
+                    top: 85%
+                    right: -76%
+                    transform: rotate(145deg)
+                @media screen and (max-width: 1280px)
+                    right: -70%
+            &.fp5
+                top: 110%
+                transform: rotate(95deg)
+                right: -105%
+                @media screen and (max-width: 1400px)
+                    top: 170%
+                    right: -90%
+                    transform: rotate(135deg)
+                @media screen and (max-width: 1280px)
+                    right: -65%
+
+            &.fp6
+                top: 100%
+                right: -125%
+                transform: rotate(120deg)
+                @media screen and (max-width: 1400px)
+                    top: 190%
+                    right: -115%
+                    transform: rotate(155deg)
+                @media screen and (max-width: 1280px)
+                    right: -84%
+                    top: 215%
+    .triangles
+        display: flex
+        width: 100%
+        margin-top: -60px
+        .left
+            border-left: 50vw solid white
+            border-top: 60px solid transparent
+            border-bottom: 0 solid transparent
+        .right
+            border-right: 50vw solid white
+            border-top: 60px solid transparent
+            border-bottom: 0 solid transparent
+    // ------------------------------------------------------------------SECOND
+    .second
+        background-color: #f5f9f7
+        margin-bottom: 25px
+        font-family: 'Open Sans', sans-serif
+        overflow-x: hidden
+        .container
+            display: flex
+            flex-wrap: nowrap
+            +adaptive-padding(80px)
+            padding-bottom: 45px
+            position: relative
+            .left
+                width: 50%
+                @media screen and (max-width: 1035px)
+                    width: 100%
+                h2
+                    font-size: 33.75px
+                    text-align: center
+                    margin: 50px 0
+                    font-weight: 400
+                    @media screen and (max-width: 1035px)
+                        font-weight: 800
+                p
+                    font-size: 22.5px
+                    @media screen and (max-width: 1035px)
+                        font-weight: 600
+                    text-align: center
+            .right
+                width: 50%
+                padding-top: 35px
+                display: flex
+                justify-content: center
+                align-items: center
+                img
+                    min-width: 465px
+                @media screen and (max-width: 1035px)
+                    position: absolute
+                    opacity: 0.2
+                    right: 35px
+                    bottom: 0
+                @media screen and (max-width: 630px)
+                    bottom: 60px
+                    opacity: 0.1
+                @media screen and (max-width: 420px)
+                    bottom: 90px
+    // -----------------------------------------------------------------THIRD
+    .third
+        background-color: #f5f9f7
+        margin-bottom: 60px
+        font-family: 'Open Sans', sans-serif
+        margin-bottom: 245px
+        .container
+            display: flex
+            flex-wrap: nowrap
+            justify-content: center
+            +adaptive-padding(80px)
+            .left
+                display: flex
+                justify-content: center
+                width: 50%
+                @media screen and (max-width: 660px)
+                    justify-content: flex-end
+                    margin-right: 15px
+                    width: 30%
+                align-items: center
+                
+                h2
+                    font-size: 58.77px
+                    margin: 0
+                    margin-left: 28px
+                    font-weight: 400
+                    @media screen and (max-width: 660px)
+                        display: none
+                img
+                    min-width: 81px
+                    @media screen and (max-width: 360px)
+                        min-width: 0
+                        width: 100%
+            .right
+                display: flex
+                justify-content: center
+                width: 50%
+                @media screen and (max-width: 660px)
+                    justify-content: flex-start
+                    margin-left: 15px
+                @media screen and (max-width: 420px)
+                    width: 70%
+                    margin-left: 7px
+                align-items: center
+                
+                font-size: 30px
+                button 
+                    padding: 15px 30px
+                    outline: none
+                    border: none
+                    background-color: #347a51
+                    cursor: pointer
+                    transition: background 0.2s ease-out 0.1s
+                    line-height: 25px
+                    min-width: 179px
+                    &:hover
+                        background-color: #86a961
+    // ------------------------------------------------------------------FOOOTER
+    footer
+        font-family: 'Open Sans', sans-serif
+        background: #4c774a
+        background: -moz-linear-gradient(left,  #4c774a 0%, #99b969 40%, #164834 100%)
+        background: -webkit-linear-gradient(left,  #4c774a 0%,#99b969 40%,#164834 100%)
+        background: linear-gradient(to right,  #4c774a 0%,#99b969 40%,#164834 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c774a', endColorstr='#164834',GradientType=1 )
+        padding-bottom: 25px
+        padding-top: 60px
+        width: 100vw
+        position: absolute
+        bottom: 0
+        .triangles
+            display: flex
+            background-color: transparent
+            width: 100%
+            .left
+                border-left: 50vw solid white
+                border-bottom: 60px solid transparent
+                border-top: 0 solid transparent
+            .right
+                border-right: 50vw solid white
+                border-bottom: 60px solid transparent
+                border-top: 0 solid transparent
+        .container
+            display: flex
+            padding: 40px 300px 50px
+            @media screen and (max-width: 1060px)
+                padding: 40px 150px 50px
+            @media screen and (max-width: 768px)
+                padding: 40px 50px 50px
+            @media screen and (max-width: 560px)
+                padding: 20px 20px 10px
+            justify-content: space-between
+            align-items: center
+            @media screen and (max-width: 560px)
+                flex-wrap: wrap
+                justify-content: space-around
+                .text
+                    width: 50%
+                    text-align: center
+                    font-size: 24px
+                    margin-bottom: 15px
+
+            a
+                text-decoration: none
+                font-size: 20px
+                color: black
+            .logo
+                width: 48px
+                height: 48px
+                background: url("../images/contact_sprite.png")
+                background-repeat: no-repeat
+                &.facebook
+                    background-position: 0 0
+                &.google
+                    background-position: -131px 0
+                &.twitter
+                    background-position: -265px 0
+        .lic
+            text-align: center
+
+
+
+
