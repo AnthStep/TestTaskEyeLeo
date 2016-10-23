@@ -7,21 +7,21 @@ gulp.task('connect', function() {
     connect.server({
         port: 47,
         livereload: true,
-        root: ['dist', 'dist/html']
+        root: ['./', './']
     });
 });
 
 gulp.task('jade', function() {
     gulp.src('source/jade/*.jade')
         .pipe(jade())
-        .pipe(gulp.dest('dist/html'))
+        .pipe(gulp.dest('./'))
         .pipe(connect.reload());
 });
 
 gulp.task('sass', function() {
     gulp.src('source/sass/*.sass')
         .pipe(sass())
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest('./css'))
         .pipe(connect.reload());
 });
 
